@@ -11,6 +11,8 @@ type Listing {
   costPerNight: Float
   "Indicates whether listing is closed for bookings (on hiatus)"
   closedForBookings: Boolean
+  "The amenities available for this listing"
+  amenities: [Amenity!]!
 }
 
 "Astronomical information for a single planet."
@@ -21,6 +23,14 @@ type Planet {
   name: String!
   "The total estimated mass of the planet (in kg)"
   mass: Int
+}
+
+type Amenity {
+  id: ID!
+  "The amenity category the amenity belongs to"
+  category: String!
+  "The amenity's name"
+  name: String!
 }
 
 type Query {
